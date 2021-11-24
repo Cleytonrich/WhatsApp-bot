@@ -34,7 +34,7 @@ def enviar_mensagem(mensagem,mensagem2):
     campo_mensagem = driver.find_elements_by_xpath('//div[contains(@class,"copyable-text selectable-text")]')
     campo_mensagem[1].click()
     time.sleep(3)
-    campo_mensagem[1].send_keys(str(mensagem) + str(contato) + str(mensagem2))
+    campo_mensagem[1].send_keys(str(mensagem) + tr(mensagem2))
     campo_mensagem[1].send_keys(Keys.ENTER)
 
 #Funcao que envia midia como mensagem
@@ -42,7 +42,7 @@ def enviar_midia(midia):
     driver.find_element_by_css_selector("span[data-icon='clip']").click()
     attach = driver.find_element_by_css_selector("input[type='file']")
     attach.send_keys(midia)
-    time.sleep(3)
+    time.sleep(8)
     send = driver.find_element_by_css_selector("span[data-icon='send']")
     send.click()    
 
